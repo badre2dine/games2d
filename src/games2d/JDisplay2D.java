@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -25,10 +27,38 @@ abstract class JDisplay2D extends JFrame {
 
             @Override
             protected void paintComponent(Graphics g) {
+                g.clearRect(0,0,getWidth(),getHeight());
                 loop(g);
             }
 
         };
+            this.addMouseListener(new MouseListener(){
+            
+                @Override
+                public void mouseReleased(MouseEvent e) {
+                    JMouseReleased(e);
+                }
+            
+                @Override
+                public void mousePressed(MouseEvent e) {
+                    JMousePressed(e);
+                }
+            
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    
+                }
+            
+                @Override
+                public void mouseEntered(MouseEvent e) {
+                    
+                }
+            
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    JMouseClicked(e);
+                }
+            });
             this.addKeyListener(new KeyListener(){
             
                 @Override
@@ -80,6 +110,12 @@ abstract class JDisplay2D extends JFrame {
     {}
     public void JkeyReleased(KeyEvent e)
     {}
+    public void JMouseClicked(MouseEvent e)
+    {}
+    public void JMousePressed(MouseEvent e)
+    {}
+    public void JMouseReleased(MouseEvent e)
+    {}
     @Override
     public int getHeight() {
         return super.getHeight()-38;
@@ -88,6 +124,34 @@ abstract class JDisplay2D extends JFrame {
     @Override
     public int getWidth() {
         return super.getWidth();
+    }
+
+    /**
+     * @return the fps
+     */
+    public int getFps() {
+        return fps;
+    }
+
+    /**
+     * @param fps the fps to set
+     */
+    public void setFps(int fps) {
+        this.fps = fps;
+    }
+
+    /**
+     * @return the root
+     */
+    public JPanel getRoot() {
+        return root;
+    }
+
+    /**
+     * @param root the root to set
+     */
+    public void setRoot(JPanel root) {
+        this.root = root;
     }
     
     

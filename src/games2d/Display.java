@@ -7,7 +7,8 @@ import javax.swing.JFrame;
 
 public class Display extends JFrame{
 
-	int speed=60;
+	private static final long serialVersionUID = 1L;
+	int speed = 60;
 	public Display (String name)
 	{
 		

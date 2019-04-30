@@ -141,8 +141,8 @@ public class Envirnement extends JPanel {
 				   p.draw(g);
 					for(Block b : blocks)
 					{
-						
-						if(b.collision.isHit(p.collision)) {b.hit();projectils.remove(p); }
+						// a change
+						if(b.collision.hitBy()!=null) {b.hit();projectils.remove(p); }
 
 						
 					}

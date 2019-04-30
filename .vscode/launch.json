@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - test2",
+            "request": "launch",
+            "mainClass": "games2d.test2",
+            "projectName": "games2d"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - testDisplay",
             "request": "launch",
             "mainClass": "games2d.testDisplay",
